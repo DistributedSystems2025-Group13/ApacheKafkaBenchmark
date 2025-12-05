@@ -1,0 +1,3 @@
+[submodule "benchmarks/openmessaging"]
+	path = benchmarks/openmessaging
+	url = git@github.com:DistributedSystems2025-Group13/openmessaging-benchmark.git
