@@ -1,0 +1,7 @@
+services:
+  benchmarks:
+    image: benchmarks:latest
+    volumes:
+      - ..:/work
+    tty: true
+    network_mode: "host"
