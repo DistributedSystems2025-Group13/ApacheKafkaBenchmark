@@ -44,13 +44,6 @@ RUN apt-get update && apt-get install -y terraform
 RUN apt-add-repository --yes --update ppa:ansible/ansible
 RUN apt-get update && apt-get install -y ansible
 
-# Install Terraform-Inventory
-RUN curl -L "https://github.com/adammck/terraform-inventory/releases/download/v0.10/terraform-inventory_v0.10_linux_amd64.zip" -o tf-inv.zip \
-    && unzip tf-inv.zip \
-    && mv terraform-inventory /usr/local/bin/ \
-    && chmod +x /usr/local/bin/terraform-inventory \
-    && rm tf-inv.zip
-
 # Setup JAVA_HOME
 ENV JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
