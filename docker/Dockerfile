@@ -17,8 +17,8 @@ RUN apt-get update && apt-get install -y \
 
 # Install JDKs
 RUN apt-get update && apt-get install -y \
-    openjdk-8-jdk \
-    openjdk-21-jdk \
+    # openjdk-8-jdk \
+    # openjdk-21-jdk \
     openjdk-25-jdk
 
 # Install Maven
@@ -48,10 +48,10 @@ RUN apt-get update && apt-get install -y ansible
 ENV JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
-# Helper scripts for switching Java
-RUN echo "alias setjava8='export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
-RUN echo "alias setjava21='export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
-RUN echo "alias setjava25='export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
+# # Helper scripts for switching Java
+# RUN echo "alias setjava8='export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
+# RUN echo "alias setjava21='export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
+# RUN echo "alias setjava25='export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64 && export PATH=\$JAVA_HOME/bin:\$PATH && java -version'" >> /root/.bashrc
 
 # Setup AWS CLI
 RUN aws configure set region eu-central-1
