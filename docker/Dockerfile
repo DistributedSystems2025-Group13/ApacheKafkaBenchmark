@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 # Install JDKs
 RUN apt-get update && apt-get install -y \
     # openjdk-8-jdk \
-    # openjdk-21-jdk \
+    openjdk-21-jdk \
     openjdk-25-jdk
 
 # Install Maven
@@ -45,7 +45,7 @@ RUN apt-add-repository --yes --update ppa:ansible/ansible
 RUN apt-get update && apt-get install -y ansible
 
 # Setup JAVA_HOME
-ENV JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
 # # Helper scripts for switching Java
